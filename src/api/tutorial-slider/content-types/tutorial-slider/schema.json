@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tutorial_sliders",
+  "info": {
+    "singularName": "tutorial-slider",
+    "pluralName": "tutorial-sliders",
+    "displayName": "Tutorial Slider",
+    "description": "Grouped tutorial steps"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "steps": {
+      "type": "component",
+      "repeatable": true,
+      "component": "tutorial.step"
+    }
+  }
+}
