@@ -513,6 +513,53 @@ export interface ApiTutorialSliderTutorialSlider
   };
 }
 
+export interface ApiUpdateSliderUpdateSlider
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'update_sliders';
+  info: {
+    description: 'Grouped update steps';
+    displayName: 'Update Slider';
+    pluralName: 'update-sliders';
+    singularName: 'update-slider';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::update-slider.update-slider'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    steps: Schema.Attribute.Component<'tutorial.step', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    version: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ApiVideoVideo extends Struct.CollectionTypeSchema {
   collectionName: 'videos';
   info: {
@@ -1069,6 +1116,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::tutorial-slider.tutorial-slider': ApiTutorialSliderTutorialSlider;
+      'api::update-slider.update-slider': ApiUpdateSliderUpdateSlider;
       'api::video.video': ApiVideoVideo;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

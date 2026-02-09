@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "update_sliders",
+  "info": {
+    "singularName": "update-slider",
+    "pluralName": "update-sliders",
+    "displayName": "Update Slider",
+    "description": "Grouped update steps"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "required": true
+    },
+    "version": {
+      "type": "string",
+      "required": true
+    },
+    "steps": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "tutorial.step",
+      "repeatable": true
+    }
+  }
+}

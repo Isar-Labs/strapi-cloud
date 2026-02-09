@@ -33,6 +33,7 @@ export interface TutorialStep extends Struct.ComponentSchema {
           localized: true;
         };
       }>;
+    video: Schema.Attribute.Media<'videos' | 'files'>;
   };
 }
 
