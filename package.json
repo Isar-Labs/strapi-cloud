@@ -10,9 +10,9 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "5.42.0",
-    "@strapi/plugin-users-permissions": "5.42.0",
-    "@strapi/strapi": "5.42.0",
+    "@strapi/plugin-cloud": "5.44.0",
+    "@strapi/plugin-users-permissions": "5.44.0",
+    "@strapi/strapi": "5.44.0",
     "better-sqlite3": "12.8.0",
     "fs-extra": "^10.0.0",
     "mime-types": "^2.1.27",
